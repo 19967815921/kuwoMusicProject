@@ -1,5 +1,6 @@
 package com.wenjieyue.controller;
 
+import com.wenjieyue.service.impl.SearchServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,7 +12,7 @@ import java.util.List;
 public class SearchController {
 
     @Autowired
-    private SearchService searchService;
+    private SearchServiceImpl searchService;
 
     @RequestMapping("/search")
     public List<Object> getAllMessage(@RequestParam("message") String message){

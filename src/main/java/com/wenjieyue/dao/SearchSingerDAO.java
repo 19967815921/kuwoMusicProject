@@ -15,11 +15,13 @@ public class SearchSingerDAO {
     private MpaasQueryFactory sw;
 
     public List<Singer> getSingerMessage(String message){
-        PageQueryResult<Singer> list = sw.buildQuery()
+        PageQueryResult<Singer> singerList = sw.buildQuery()
                 .like("aartist",message)
+                .or()
+                .like("name",message)
                 .doPageQuery(1,20,Singer.class);
-        if(list.getCount() > 0){
-            return list.getResult();
+        if(singerList.getCount() > 0){
+            return singerList.getResult();
         }
         return null;
     }

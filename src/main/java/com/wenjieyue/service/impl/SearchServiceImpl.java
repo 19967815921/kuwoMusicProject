@@ -1,6 +1,8 @@
 package com.wenjieyue.service.impl;
 
+import com.wenjieyue.dao.SearchAlbumDAO;
 import com.wenjieyue.dao.SearchMusicDAO;
+import com.wenjieyue.dao.SearchMvDAO;
 import com.wenjieyue.dao.SearchSingerDAO;
 import com.wenjieyue.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +28,10 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public List<Object> getAllMessage(String message) {
         List<Object> list = new ArrayList<>();
-        list.addAll(searchSingerDAO.getSingerMessage(message));
-        list.addAll(searchMusicDAO.getMusicMessage(message));
-        list.addAll(searchMvDAO.getMvMessage(message));
-        list.addAll(searchAlbumDAO.getAlbumMessage(message));
+        list.add(searchSingerDAO.getSingerMessage(message));
+        list.add(searchMusicDAO.getMusicMessage(message));
+        list.add(searchMvDAO.getMvMessage(message));
+        list.add(searchAlbumDAO.getAlbumMessage(message));
         return list;
     }
 }
