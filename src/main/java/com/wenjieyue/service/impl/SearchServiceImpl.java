@@ -21,6 +21,8 @@ public class SearchServiceImpl implements SearchService {
     @Autowired
     private SearchAlbumDAO searchAlbumDAO;
 
+
+
     @Override
     public List<Object> getAllMessage(String message) {
         List<Object> list = new ArrayList<>();
