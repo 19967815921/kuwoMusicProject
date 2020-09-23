@@ -1,6 +1,8 @@
 package com.wenjieyue.controller;
 
+import com.wenjieyue.pojo.Album;
 import com.wenjieyue.pojo.Music;
+import com.wenjieyue.pojo.Mv;
 import com.wenjieyue.service.impl.ClickEventServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,12 +28,12 @@ public class ClickEventController {
     }
 
     @RequestMapping("/mv")
-    public List<Object> getAllMvMessage(Integer id){
+    public List<Mv> getAllMvMessage(Integer id){
         return ClickEventService.getAllMvMessage(id);
     }
 
     @RequestMapping("/album")
-    public List<Object> getAllAlbumMessage(Integer id){
+    public List<Album> getAllAlbumMessage(Integer id){
         return ClickEventService.getAllAlbumMessage(id);
     }
 
